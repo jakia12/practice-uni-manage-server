@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "lint:check": "eslint --ignore-path .eslintignore --ext .js,.ts .",
+    "lint:fix": "eslint . --fix",
+    "prettier:check": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
+    "lint-prettier": "yarn lint:check && yarn prettier:check",
+    "prettier:fix": "prettier --write .",
     "start": "ts-node-dev --respawn --transpile-only src/server.ts"
   },
   "license": "MIT",
@@ -12,6 +17,8 @@
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "eslint": "^8.53.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
     "express": "^4.18.2",
     "mongoose": "^8.0.1"
   },
